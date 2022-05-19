@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>Pedidos</title>
+    <style>
+    </style>
+</head>
+<body>
+
+    <form method="POST">
+            Receita
+            <input type="text" name="receita" placeholder="Ex: Pão de queijo">
+
+
+
+        <table border=1>
+        <tr><td colspan="6" style="text-align: center"><label>Pedidos:</label></td></tr>
+        <tr>
+
+        <div id="codProduto">
+            <td>Cód. Produto:</td> 
+            <td><input type="text" name="codProduto[]" placeholder="Cód. Produto"></td>
+        </div>
+
+
+
+
+        <div id="quantidade">
+            <td><label>Quantidade:</label></td>
+            <td><input type="text" name="razao[]" placeholder="Quantidade"></td>
+        </div>
+
+
+
+
+        <div id="desconto">
+            <td><label>Desconto:</label></td>
+            <td><input type="text" name="desconto[]" placeholder="Desconto"></td>
+        </div>
+            </tr>
+        </table>
+
+  <button type="button" id="adicionar">Adicionar</button>
+  <button type="submit">Cadastrar</button>
+
+    </form> 
+
+    <script>
+    const adicionar = document.getElementById("adicionar");
+
+
+    const codProduto = document.getElementById("codProduto");
+    const quantidade = document.getElementById("quantidade");
+    const desconto = document.getElementById("desconto");
+
+    adicionar.addEventListener("click", function (event) {
+    let campo = document.createElement("input");
+    let campoQuantidade = document.createElement("input");
+    let campoDesconto = document.createElement("input");
+
+    campo.name = "codProduto[]";
+    campo.name = "razao[]";
+    campo.placeholder = "CodProduto";
+    campoQuantidade.placeholder = "Quantidade";
+    campoDesconto.placeholder = "Desconto";
+    codProduto.appendChild(campo);
+    quantidade.appendChild(campoQuantidade);
+    desconto.appendChild(campoDesconto);
+
+    });
+    </script>
+
+
+
+
+
+</body>
+</html>
